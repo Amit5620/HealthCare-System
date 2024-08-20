@@ -13,7 +13,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
         # Simple login logic for demonstration
-        if username == 'admin' and password == '123':
+        if username == 'amit' and password == '12345':
             session['logged_in'] = True
             return redirect(url_for('dashboard'))
     return render_template('login.html')
