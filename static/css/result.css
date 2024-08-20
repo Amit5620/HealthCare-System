@@ -1,0 +1,93 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1f2029;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.result-section {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.result-section h2{
+    font-size: 30px;
+    color: #ccc;
+}
+
+.result-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.image-section, .prediction-section, .affected-section {
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.image-section img, .affected-section img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+h2, h3 {
+    color: #a978ba;
+}
+
+p {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #ccc;
+    margin-top: 150px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #7f1098;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    background-color: #756315;
+}

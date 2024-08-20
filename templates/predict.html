@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction Through X-ray Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/predict.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Disease Prediction Through X-ray Image</h1>
+        <div class="disease-list">
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/brain_tumor_sample.jpg') }}" alt="Brain Tumor">
+                <h2>Brain Tumor</h2>
+                <p>Detect brain tumor using X-ray images.</p>
+            </div>
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/lung_cancer_sample.jpg') }}" alt="Lung Cancer">
+                <h2>Lung Cancer</h2>
+                <p>Detect lung cancer using X-ray images.</p>
+            </div>
+            <div class="disease">
+                <img src="{{ url_for('static', filename='images/pneumonia_sample.jpg') }}" alt="Pneumonia">
+                <h2>Pneumonia</h2>
+                <p>Detect pneumonia using X-ray images.</p>
+            </div>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="prediction-form mb-3 box">
+
+                <label for="disease-select">Select Disease:</label>
+                
+                <select name="disease-select" class="form-select">
+                    <option value="brain-tumor">Brain Tumor</option>
+                    <option value="lung-cancer">Lung Cancer</option>
+                    <option value="pneumonia">Pneumonia</option>
+                </select>
+
+                <label for="image-upload">Upload X-ray Image:</label>
+                <input type="file" name="image-upload" accept="image/*" class="form-control" required>
+
+
+                <button type="submit" class="btn btn-primary w-100" id="predict-button">Predict</button>
+            </div>
+        </form>
+
+
+        <div id="loading-animation" class="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('predict-button').addEventListener('click', function() {
+            document.getElementById('loading-animation').style.display = 'block';
+        });
+
+        const dropdown = document.querySelector('.dropdown');
+
+        dropdown.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+        </script>
+</body>
+</html>
+{% endblock %}

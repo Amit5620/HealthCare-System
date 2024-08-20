@@ -1,0 +1,260 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1f2029;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+
+.container h1 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.disease-list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.disease {
+    width: 40%;
+    text-align: center;
+}
+
+.disease img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.disease h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.disease p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+
+form {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form select, form input[type="file"], form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+form select, form input[type="file"] {
+    background-color: #444;
+    color: #fff;
+}
+
+form button {
+    background-color: #48dbfb;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1db4c8;
+}
+
+
+#loading-animation {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-left-color: #fff;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#loading-animation p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+
+.dark-light {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #48dbfb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 25px rgba(255, 235, 167, 0.45);
+}
+
+.dark-light:before, .dark-light:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.dark-light:before {
+    background-color: #48dbfb;
+    background-image: url('https://assets.codepen.io/1462889/sun.svg');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dark-light:after {
+    background-color: #102770;
+    background-image: url('https://assets.codepen.io/1462889/moon.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+}
+
+.dark-light:checked:after {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+
+.dropdown {
+    display: none;
+}
+
+.dropdown + label {
+    display: block;
+    width: 220px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #ffeba7;
+    color: #102770;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 12px 35px rgba(255, 235, 167, 0.15);
+    text-align: center;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.dropdown:checked + label {
+    background-color: #102770;
+    color: #ffeba7;
+    box-shadow: 0 12px 35px rgba(16, 39, 112, 0.25);
+}
+
+.dropdown + label .uil {
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown:checked + label .uil {
+    transform: rotate(180deg);
+}
+
+.section-dropdown {
+    display: none;
+    background-color: #111;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 10px;
+    box-shadow: 0 14px 35px rgba(9, 9, 12, 0.4);
+}
+
+.dropdown:checked ~ .section-dropdown {
+    display: block;
+}
+
+.section-dropdown a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.section-dropdown a:hover {
+    background-color: #ffeba7;
+    color: #102770;
+}
+
+
+.light-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.2s ease;
+}
+
+.dark-light:checked ~ .light-back {
+    opacity: 1;
+}
+
+
+
+

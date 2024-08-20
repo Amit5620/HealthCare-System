@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+
+        <div class="result-section">
+            <center><strong><h2>{{ disease | capitalize }} Prediction</h2></strong></center>
+            
+            <div class="result-details">
+                <div class="image-section">
+                    <h3>Uploaded X-ray Image:</h3>
+                    <img src="{{ url_for('static', filename='uploads/' ~ filename) }}" alt="Uploaded Image">
+                </div>
+
+                <div class="prediction-section">
+                    <h3>Prediction:</h3>
+                    <p>{{ prediction }}</p>
+                </div>
+
+                <div class="affected-section">
+                    <h3>Affected Part Highlight:</h3>
+                    <img src="{{ url_for('static', filename='uploads/123.jpeg') }}" alt="Affected Part">
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('static', filename='uploads/123.jpeg') }}" class="btn btn-outline-secondary">Download Affected Image</a>
+
+        <a href="{{ url_for('predict') }}" class="btn">Back to Prediction</a>
+
+    </div>
+</body>
+</html>
+{% endblock %}
