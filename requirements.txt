@@ -7,3 +7,4 @@ tensorflow==2.13.0
 matplotlib
 ipython
 gunicorn
+typing_extensions
