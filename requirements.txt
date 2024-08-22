@@ -4,7 +4,8 @@ pillow
 numpy
 pandas
 opencv-python-headless
-tensorflow==2.12.0
+# tensorflow==2.12.0
+tensorflow
 matplotlib
 ipython
 # gunicorn
