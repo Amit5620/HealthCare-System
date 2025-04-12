@@ -45,10 +45,12 @@ body {
 }
 
 .disease img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 90%;
+    height: 200px;
+    border-radius: 30px;
     margin-bottom: 10px;
+    border: solid rgb(122, 165, 42) 5px;
+
 }
 
 .disease h2 {
